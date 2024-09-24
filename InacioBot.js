@@ -54,6 +54,10 @@ const client = new Client({
     ] }
 });
 
+const browser = await puppeteer.launch({
+  executablePath: '/usr/bin/chromium-browser'
+})
+
 // INITIALIZE DO CLIENT DO WPP
 client.initialize();
 
