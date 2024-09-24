@@ -40,7 +40,7 @@ app.get('/', (req, res) => {
 const client = new Client({
   authStrategy: new LocalAuth({ clientId: idClient }),
   puppeteer: { headless: true,
-  //executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+  executablePath: '/usr/bin/chromium-browser',
 
     args: [
       '--no-sandbox',
@@ -53,10 +53,6 @@ const client = new Client({
       '--disable-gpu'
     ] }
 });
-
-const browser = await puppeteer.launch({
-  executablePath: '/usr/bin/chromium-browser'
-})
 
 // INITIALIZE DO CLIENT DO WPP
 client.initialize();
