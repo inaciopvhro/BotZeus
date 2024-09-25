@@ -30,7 +30,7 @@ debug: true
 app.use("/", express.static(__dirname + "/"))
 
 app.get('/', (req, res) => {
-  res.sendFile('index.html', {
+  res.sendFile('/BotZeus/index.html', {
     root: __dirname
   });
 });
@@ -40,7 +40,7 @@ app.get('/', (req, res) => {
 const client = new Client({
   authStrategy: new LocalAuth({ clientId: idClient }),
   puppeteer: { headless: true,
-  executablePath: '/usr/bin/chromium-browser',
+  // executablePath: '/usr/bin/chromium-browser',
 
     args: [
       '--no-sandbox',
